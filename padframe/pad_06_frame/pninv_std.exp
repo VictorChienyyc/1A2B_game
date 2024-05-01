@@ -1,0 +1,50 @@
+*
+* Elec422 SPICE EXPERIMENT TEMPLATE;
+*
+* Pseudo NMOS buffer - wide NMOS device 
+* ------------------------------------
+
+* Include MOSFET Model File for AMI C5N process
+.include "mosis_spice_model_AMI05.txt"
+
+
+* Include Transistor Netlist from : ext2spice from within Magic
+.include "pninv_std.spice"
+
+
+* Set BASIC VOLTAGE levels
+vdd  vdd  gnd  dc 5
+* set substrate voltages : P-sub = vdd;  N-sub = Gnd
+vs1 vdd  vdd  dc 0
+vs2 Gnd  gnd  dc 0
+
+* ------------------------------------
+
+* Set other constant circuit inputs, for example b:
+* vb  b gnd  dc 0
+
+* ------------------------------------
+
+* Set Circuit Input which will change, for example a:
+* input pulse between node and gnd (initially 0 ) of:
+* pulse (init_value pulse_value delay rise_time fall_time pulse_width period)
+
+
+* data value
+vinput  input gnd 0 pulse(0 5 3ns 0.1ns 0.1ns 3.8ns 10ns)
+* ------------------------------------
+
+
+
+* Do analysis: give increments and total time for analysis.
+.tran .1ns 10ns
+
+* If running in batch mode spice -b, then ascii plots are made
+* Plot Voltages
+.probe tran v(input) v(output) v(outload)
+
+* Next option line needed to generate data for cscope viewer
+.OPTION LIST NODE POST
+
+.end
+

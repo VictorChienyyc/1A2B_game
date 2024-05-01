@@ -1,0 +1,80 @@
+*
+* Elec422/527 SPICE EXPERIMENT TEMPLATE;
+*
+* Dynamic domino 4 input NAND / AND
+* ------------------------------------
+
+* Include MOSFET Model File for AMI C5N process
+.include "mosis_spice_model_AMI05.txt"
+
+* Include Transistor Netlist from : ext2spice from within Magic
+.include "top.spice"
+
+* Set BASIC VOLTAGE levels
+vdd  vdd  gnd  dc 5
+* set substrate voltages : P-sub = vdd;  N-sub = Gnd
+vs1 vdd  vdd  dc 0
+vs2 Gnd  gnd  dc 0
+
+* ------------------------------------
+
+* Set other constant circuit inputs, for example b. Commented out here.
+* vb  b gnd  dc 0
+
+* ------------------------------------
+* Set Circuit Input which will change, here a,b,c,d and also the precharge
+* Instead of single pulses, use the spice digital pattern input 
+* Vxxx n+ n- PAT ( vhi vlo td tr tf tsample data )
+* In this pattern, Vxxx is the name of the voltage, between nodes n+ and n- (gnd)
+* The vhi is High voltage is 5 v, the vlo is Low voltage is 0 v
+* The td is the Time delay before the pattern starts
+* The tr is the Rise time is 1 n, the tf is the Fall time is 1 n
+* The tsample is the sample time where the signal is high
+* The data is the bit or b-string of 1 and 0 with no spaces in between.
+* Example vpre pre gnd  pat (5 0 5ns 0.1ns 0.1ns 4.8ns b01010101)
+* Here the precharage voltage is delayed 5ns and between 0 and 5V with a pulse
+* width of 0.1 + 4.8 + 0.1 or 5ns.  The b-string of b010101010 is 9 bits or 45ns
+
+* ------------------------------------
+
+* precharge signal 0 to pfet during precharge, 1 during evaluate
+* vpre pre gnd  pat (5 0 5ns 0.1ns 0.1ns 4.8ns b0101010101)
+* data values, follow strict 0 during precharge
+
+vin_clka   in_clka   gnd  pat (5 0 5ns 0.3ns 0.3ns 5ns b010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100)
+vin_clkb   in_clkb   gnd  pat (5 0 5ns 0.3ns 0.3ns 5ns b0001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001)
+vin_restart   in_restart   gnd  pat (5 0 5ns 0.3ns 0.3ns 20ns b11110000000000000000000000000000000000000000000000000000000000000000)
+vin_loadtest   in_loadtest   gnd  pat (5 0 5ns 0.3ns 0.3ns 20ns b000000000000000000000000111100000000000000000000000000000000000000000000)
+vin_enter  in_enter   gnd  pat (5 0 5ns 0.3ns 0.3ns 20ns b000000000000000000000000000000001111000000000000000000000000000000000000)
+vin_ans03   in_ans0[3]   gnd  pat (5 0 5ns 0.3ns 0.3ns 20ns b000000000000000000000000000000000000000000000000000000000000000000000000)
+vin_ans02   in_ans0[2]   gnd  pat (5 0 5ns 0.3ns 0.3ns 20ns b000000000000000000000000000000000000000000000000000000000000000000000000)
+vin_ans01   in_ans0[1]   gnd  pat (5 0 5ns 0.3ns 0.3ns 20ns b000000000000000000000000000000000000000011111111111111111111111111111111)
+vin_ans00   in_ans0[0]   gnd  pat (5 0 5ns 0.3ns 0.3ns 20ns b000000000000000000000000000000000000000000000000000000000000000000000000)
+vin_ans13  in_ans1[3]   gnd  pat (5 0 5ns 0.3ns 0.3ns 20ns b000000000000000000000000000000000000000000000000000000000000000000000000)
+vin_ans12  in_ans1[2]   gnd  pat (5 0 5ns 0.3ns 0.3ns 20ns b000000000000000000000000000000000000000000000000000000000000000000000000)
+vin_ans11  in_ans1[1]   gnd  pat (5 0 5ns 0.3ns 0.3ns 20ns b000000000000000000000000000000000000000011111111111111111111111111111111)
+vin_ans10  in_ans1[0]   gnd  pat (5 0 5ns 0.3ns 0.3ns 20ns b000000000000000000000000000000000000000011111111111111111111111111111111)
+vin_ans23   in_ans2[3]   gnd  pat (5 0 5ns 0.3ns 0.3ns 20ns b000000000000000000000000000000000000000000000000000000000000000000000000)
+vin_ans22   in_ans2[2]   gnd  pat (5 0 5ns 0.3ns 0.3ns 20ns b000000000000000000000000000000000000000011111111111111111111111111111111)
+vin_ans21   in_ans2[1]   gnd  pat (5 0 5ns 0.3ns 0.3ns 20ns b000000000000000000000000000000000000000000000000000000000000000000000000)
+vin_ans20   in_ans2[0]   gnd  pat (5 0 5ns 0.3ns 0.3ns 20ns b000000000000000000000000000000000000000000000000000000000000000000000000)
+vin_ans33  in_ans3[3]   gnd  pat (5 0 5ns 0.3ns 0.3ns 20ns b000000000000000000000000000000000000000000000000000000000000000000000000)
+vin_ans32   in_ans3[2]   gnd  pat (5 0 5ns 0.3ns 0.3ns 20ns b000000000000000000000000000000000000000011111111111111111111111111111111)
+vin_ans31   in_ans3[1]   gnd  pat (5 0 5ns 0.3ns 0.3ns 20ns b000000000000000000000000000000000000000000000000000000000000000000000000)
+vin_ans30   in_ans3[0]   gnd  pat (5 0 5ns 0.3ns 0.3ns 20ns b000000000000000000000000000000000000000011111111111111111111111111111111)
+
+
+* ------------------------------------
+
+* Do analysis: give increments and total time for analysis here.
+* .tran step_size total_simulation_time
+* Here 0.1ns is appropriate for solution calculation
+* Total time is based on initial 5ns delay plus nine bit pattern of 5ns per bit
+.tran 0.1ns 5000ns
+
+
+* Next option line needed to generate data for cscope viewer
+.OPTION LIST NODE POST
+
+.end
+t

@@ -1,0 +1,128 @@
+magic
+tech scmos
+magscale 1 2
+timestamp 1712112060
+<< metal1 >>
+rect 28 414 532 454
+rect 76 366 484 406
+rect 76 334 484 346
+rect 216 267 251 273
+rect 264 267 296 273
+rect 28 134 532 146
+rect 76 74 484 114
+rect 28 26 532 66
+<< metal2 >>
+rect 28 26 68 454
+rect 76 74 116 406
+rect 245 267 283 273
+rect 277 247 283 267
+rect 444 74 484 406
+rect 492 26 532 454
+use AND2X2  AND2X2_0
+timestamp 1712112060
+transform 1 0 288 0 -1 340
+box -16 -6 80 210
+use FILL  FILL_0
+timestamp 1712112060
+transform 1 0 400 0 -1 340
+box -16 -6 32 210
+use FILL  FILL_1
+timestamp 1712112060
+transform 1 0 384 0 -1 340
+box -16 -6 32 210
+use FILL  FILL_2
+timestamp 1712112060
+transform 1 0 368 0 -1 340
+box -16 -6 32 210
+use FILL  FILL_3
+timestamp 1712112060
+transform 1 0 352 0 -1 340
+box -16 -6 32 210
+use FILL  FILL_4
+timestamp 1712112060
+transform 1 0 176 0 -1 340
+box -16 -6 32 210
+use FILL  FILL_5
+timestamp 1712112060
+transform 1 0 160 0 -1 340
+box -16 -6 32 210
+use FILL  FILL_6
+timestamp 1712112060
+transform 1 0 144 0 -1 340
+box -16 -6 32 210
+use M2_M1  M2_M1_0
+timestamp 1712112060
+transform 1 0 280 0 1 250
+box -4 -4 4 4
+use M2_M1  M2_M1_1
+timestamp 1712112060
+transform 1 0 248 0 1 270
+box -4 -4 4 4
+use mod_VIA0  mod_VIA0_0
+timestamp 1712112060
+transform 1 0 512 0 1 434
+box -20 -20 20 20
+use mod_VIA0  mod_VIA0_1
+timestamp 1712112060
+transform 1 0 512 0 1 46
+box -20 -20 20 20
+use mod_VIA0  mod_VIA0_2
+timestamp 1712112060
+transform 1 0 48 0 1 434
+box -20 -20 20 20
+use mod_VIA0  mod_VIA0_3
+timestamp 1712112060
+transform 1 0 48 0 1 46
+box -20 -20 20 20
+use mod_VIA0  mod_VIA0_4
+timestamp 1712112060
+transform 1 0 464 0 1 386
+box -20 -20 20 20
+use mod_VIA0  mod_VIA0_5
+timestamp 1712112060
+transform 1 0 464 0 1 94
+box -20 -20 20 20
+use mod_VIA0  mod_VIA0_6
+timestamp 1712112060
+transform 1 0 96 0 1 386
+box -20 -20 20 20
+use mod_VIA0  mod_VIA0_7
+timestamp 1712112060
+transform 1 0 96 0 1 94
+box -20 -20 20 20
+use mod_VIA1  mod_VIA1_0
+timestamp 1712112060
+transform 1 0 512 0 1 140
+box -20 -6 20 6
+use mod_VIA1  mod_VIA1_1
+timestamp 1712112060
+transform 1 0 48 0 1 140
+box -20 -6 20 6
+use mod_VIA1  mod_VIA1_2
+timestamp 1712112060
+transform 1 0 96 0 1 340
+box -20 -6 20 6
+use mod_VIA1  mod_VIA1_3
+timestamp 1712112060
+transform 1 0 464 0 1 340
+box -20 -6 20 6
+use NOR2X1  NOR2X1_0
+timestamp 1712112060
+transform 1 0 192 0 -1 340
+box -16 -6 64 210
+use NOR2X1  NOR2X1_1
+timestamp 1712112060
+transform 1 0 240 0 -1 340
+box -16 -6 64 210
+<< labels >>
+rlabel electrodecontact s 232 250 232 250 4 a
+rlabel electrodecontact s 200 290 200 290 4 b
+rlabel electrodecontact s 312 250 312 250 4 c
+rlabel electrodecontact s 248 290 248 290 4 d
+rlabel electrodecontact s 344 250 344 250 4 h
+rlabel metal1 216 270 216 270 4 i
+rlabel metal2 76 74 76 74 4 gnd
+rlabel metal2 28 26 28 26 4 vdd
+<< properties >>
+string path 1188.000 1215.000 1332.000 1215.000 
+<< end >>

@@ -1,0 +1,119 @@
+timestamp 1712112060
+version 8.3
+tech scmos
+style AMI0.5um(amic5)from:T11Z
+scale 1000 1 15
+resistclasses 82400 102700 816000 816000 1 22300 41300 41300 90 90 60
+use mod_VIA0 mod_VIA0_2 1 0 48 0 1 434
+use mod_VIA0 mod_VIA0_3 1 0 48 0 1 46
+use mod_VIA0 mod_VIA0_6 1 0 96 0 1 386
+use mod_VIA0 mod_VIA0_7 1 0 96 0 1 94
+use mod_VIA1 mod_VIA1_1 1 0 48 0 1 140
+use mod_VIA1 mod_VIA1_2 1 0 96 0 1 340
+use FILL FILL_4 1 0 176 0 -1 340
+use FILL FILL_5 1 0 160 0 -1 340
+use FILL FILL_6 1 0 144 0 -1 340
+use NOR2X1 NOR2X1_0 1 0 192 0 -1 340
+use AND2X2 AND2X2_0 1 0 288 0 -1 340
+use M2_M1 M2_M1_0 1 0 280 0 1 250
+use M2_M1 M2_M1_1 1 0 248 0 1 270
+use NOR2X1 NOR2X1_1 1 0 240 0 -1 340
+use FILL FILL_0 1 0 400 0 -1 340
+use FILL FILL_1 1 0 384 0 -1 340
+use FILL FILL_2 1 0 368 0 -1 340
+use FILL FILL_3 1 0 352 0 -1 340
+use mod_VIA0 mod_VIA0_0 1 0 512 0 1 434
+use mod_VIA0 mod_VIA0_1 1 0 512 0 1 46
+use mod_VIA0 mod_VIA0_4 1 0 464 0 1 386
+use mod_VIA0 mod_VIA0_5 1 0 464 0 1 94
+use mod_VIA1 mod_VIA1_0 1 0 512 0 1 140
+use mod_VIA1 mod_VIA1_3 1 0 464 0 1 340
+node "h" 0 0 344 250 p2c 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "d" 0 0 248 290 p2c 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "c" 0 0 312 250 p2c 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "b" 0 0 200 290 p2c 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "a" 0 0 232 250 p2c 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m2_492_26#" 1 12981.6 492 26 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 17120 936 0 0
+node "m2_444_74#" 1 9756 444 74 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 13280 744 0 0
+node "m2_245_267#" 1 1184.88 245 267 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 348 128 0 0
+node "gnd" 1 9756 76 74 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 13280 744 0 0
+node "vdd" 1 12981.6 28 26 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 17120 936 0 0
+node "m1_28_26#" 1 26138.4 28 26 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 20160 1088 0 0 0 0
+node "m1_76_74#" 1 21328.8 76 74 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16320 896 0 0 0 0
+node "m1_28_134#" 4 15673.7 28 134 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 6048 1032 0 0 0 0
+node "m1_264_267#" 0 977.52 264 267 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 192 76 0 0 0 0
+node "i" 1 1056.67 216 267 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 210 82 0 0 0 0
+node "m1_76_334#" 3 12739 76 334 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4896 840 0 0 0 0
+node "m1_76_366#" 1 21328.8 76 366 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16320 896 0 0 0 0
+node "m1_28_414#" 1 26138.4 28 414 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 20160 1088 0 0 0 0
+cap "m2_245_267#" "i" 24.3
+cap "m1_28_26#" "m2_492_26#" 1080
+cap "m1_28_134#" "m2_492_26#" 324
+cap "m1_76_74#" "m2_444_74#" 1080
+cap "gnd" "m1_76_366#" 1080
+cap "m1_28_134#" "m2_444_74#" 324
+cap "m1_76_334#" "m2_444_74#" 324
+cap "gnd" "m1_76_74#" 1080
+cap "vdd" "m1_28_414#" 1080
+cap "m2_245_267#" "m1_264_267#" 76.95
+cap "vdd" "m1_28_26#" 1080
+cap "m1_28_414#" "m2_492_26#" 1080
+cap "m1_76_366#" "m2_444_74#" 1080
+cap "gnd" "m1_28_134#" 324
+cap "vdd" "m1_28_134#" 324
+cap "gnd" "m1_76_334#" 324
+cap "NOR2X1_0/B" "M2_M1_1/m1_n4_n4#" 28.08
+cap "NOR2X1_1/A" "NOR2X1_1/B" 8.1
+cap "NOR2X1_1/B" "NOR2X1_1/Y" 44.28
+merge "mod_VIA0_0/m1_n20_n20#" "mod_VIA0_2/m1_n20_n20#" -70599 -384 -192 0 0 -27648 -2016 0 0 0 0 0 0 0 0 0 0 -15184 -2592 -7360 -848 0 0
+merge "mod_VIA0_2/m1_n20_n20#" "m1_28_414#"
+merge "m1_28_414#" "mod_VIA1_0/m1_n20_n6#"
+merge "mod_VIA1_0/m1_n20_n6#" "mod_VIA0_1/m1_n20_n20#"
+merge "mod_VIA0_1/m1_n20_n20#" "m2_492_26#"
+merge "m2_492_26#" "FILL_3/vdd"
+merge "FILL_3/vdd" "FILL_2/vdd"
+merge "FILL_2/vdd" "FILL_1/vdd"
+merge "FILL_1/vdd" "FILL_0/vdd"
+merge "FILL_0/vdd" "AND2X2_0/vdd"
+merge "AND2X2_0/vdd" "NOR2X1_1/vdd"
+merge "NOR2X1_1/vdd" "NOR2X1_0/vdd"
+merge "NOR2X1_0/vdd" "FILL_6/vdd"
+merge "FILL_6/vdd" "FILL_5/vdd"
+merge "FILL_5/vdd" "FILL_4/vdd"
+merge "FILL_4/vdd" "mod_VIA1_1/m1_n20_n6#"
+merge "mod_VIA1_1/m1_n20_n6#" "m1_28_134#"
+merge "m1_28_134#" "mod_VIA0_3/m1_n20_n20#"
+merge "mod_VIA0_3/m1_n20_n20#" "vdd"
+merge "vdd" "m1_28_26#"
+merge "NOR2X1_1/Y" "AND2X2_0/A" -494.22 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -48 -40 0 0 0 0
+merge "AND2X2_0/A" "m1_264_267#"
+merge "AND2X2_0/B" "c" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "mod_VIA1_3/m1_n20_n6#" "mod_VIA0_4/m1_n20_n20#" -35080.8 0 0 -384 -192 0 0 0 0 0 0 0 0 0 0 0 0 -11584 -1792 -7360 -848 0 0
+merge "mod_VIA0_4/m1_n20_n20#" "FILL_3/gnd"
+merge "FILL_3/gnd" "FILL_2/gnd"
+merge "FILL_2/gnd" "FILL_1/gnd"
+merge "FILL_1/gnd" "FILL_0/gnd"
+merge "FILL_0/gnd" "AND2X2_0/gnd"
+merge "AND2X2_0/gnd" "NOR2X1_1/gnd"
+merge "NOR2X1_1/gnd" "NOR2X1_0/gnd"
+merge "NOR2X1_0/gnd" "FILL_6/gnd"
+merge "FILL_6/gnd" "FILL_5/gnd"
+merge "FILL_5/gnd" "FILL_4/gnd"
+merge "FILL_4/gnd" "mod_VIA1_2/m1_n20_n6#"
+merge "mod_VIA1_2/m1_n20_n6#" "m1_76_334#"
+merge "m1_76_334#" "mod_VIA0_6/m1_n20_n20#"
+merge "mod_VIA0_6/m1_n20_n20#" "m1_76_366#"
+merge "m1_76_366#" "mod_VIA0_5/m1_n20_n20#"
+merge "mod_VIA0_5/m1_n20_n20#" "m2_444_74#"
+merge "m2_444_74#" "mod_VIA0_7/m1_n20_n20#"
+merge "mod_VIA0_7/m1_n20_n20#" "gnd"
+merge "gnd" "m1_76_74#"
+merge "NOR2X1_1/A" "d" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "NOR2X1_1/B" "M2_M1_1/m1_n4_n4#" -1460.18 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -130 -78 -84 -52 0 0
+merge "M2_M1_1/m1_n4_n4#" "M2_M1_0/m1_n4_n4#"
+merge "M2_M1_0/m1_n4_n4#" "m2_245_267#"
+merge "m2_245_267#" "NOR2X1_0/Y"
+merge "NOR2X1_0/Y" "i"
+merge "NOR2X1_0/B" "a" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "NOR2X1_0/A" "b" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "AND2X2_0/Y" "h" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0

@@ -1,0 +1,56 @@
+*
+* Elec422 SPICE EXPERIMENT TEMPLATE;
+*
+* ------------------------------------
+
+* Include MOSFET Model File for AMI C5N process
+.include "mosis_spice_model_AMI05.txt"
+
+
+* Include Transistor Netlist from : ext2spice from within Magic
+.include "PadBiDir.spice"
+
+
+* Set BASIC VOLTAGE levels
+vdd  vdd  gnd  dc 5
+* set substrate voltages : P-sub = vdd;  N-sub = Gnd
+vs1 vdd  vdd  dc 0
+vs2 Gnd  gnd  dc 0
+
+* ana DATA DO DI DIB OEN
+* | Test pad as input pad
+* V   OEN   0 0 0 0 0 0 0
+* V   DATA  0 0 1 1 0 1 0
+
+
+* ------------------------------------
+
+* Set other constant circuit inputs, for example OEN to 0 for input pad:
+voen  OEN gnd  dc 5
+
+* ------------------------------------
+
+* Set Circuit Input which will change, for example DATA:
+* input pulse between node and gnd (initially 0 ) of:
+* pulse (init_value pulse_value delay rise_time fall_time pulse_width period)
+
+
+* data value
+vdo  do gnd 5 pulse(5 0 2ns 0.1ns 0.1ns 4.8ns 10ns)
+* ------------------------------------
+
+
+
+* Do analysis: give increments and total time for analysis.
+.tran .1ns 30ns
+
+* If running in batch mode spice -b, then ascii plots are made
+* Plot Voltages
+* DATA DO DI DIB OEN
+.plot tran v(DATA) v(DO) v(DI) v(DIB) v(OEN)
+
+* Next option line needed to generate data for saber viewer
+.OPTION LIST NODE POST
+
+.end
+

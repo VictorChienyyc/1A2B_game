@@ -1,0 +1,82 @@
+ScopeSigMgr:loadpffile /storage-home/j/jz155/hw5/pad_06_frame/padtest_in.tr0 1 openonly
+# PF:1
+wm geometry .sigmgr._PF:1 232x342+676+427
+wm geometry .sigmgr._PF:1 232x342+680+365
+wm geometry .sigmgr._PF:1 232x342+683+344
+wm geometry .sigmgr._PF:1 232x342+685+306
+wm geometry .sigmgr._PF:1 232x342+690+273
+wm geometry .sigmgr._PF:1 232x342+691+261
+wm geometry .sigmgr._PF:1 232x342+693+249
+wm geometry .sigmgr._PF:1 232x342+694+240
+wm geometry .sigmgr._PF:1 232x342+696+222
+wm geometry .sigmgr._PF:1 232x342+697+217
+wm geometry .sigmgr._PF:1 232x342+697+211
+wm geometry .sigmgr._PF:1 232x342+697+206
+wm geometry .sigmgr._PF:1 232x342+697+201
+wm geometry .sigmgr._PF:1 232x342+697+198
+wm geometry .sigmgr._PF:1 232x342+699+196
+wm geometry .sigmgr._PF:1 232x342+699+195
+wm geometry .sigmgr._PF:1 232x342+700+195
+wm geometry .sigmgr._PF:1 232x342+700+193
+wm geometry .sigmgr._PF:1 233x345+700+193
+wm geometry .sigmgr._PF:1 234x348+700+193
+wm geometry .sigmgr._PF:1 236x406+700+193
+wm geometry .sigmgr._PF:1 229x444+700+193
+wm geometry .sigmgr._PF:1 228x463+700+193
+wm geometry .sigmgr._PF:1 229x474+700+193
+wm geometry .sigmgr._PF:1 231x488+700+193
+wm geometry .sigmgr._PF:1 230x494+700+193
+wm geometry .sigmgr._PF:1 231x505+700+193
+wm geometry .sigmgr._PF:1 230x508+700+193
+wm geometry .sigmgr._PF:1 230x516+700+193
+wm geometry .sigmgr._PF:1 230x540+700+193
+wm geometry .sigmgr._PF:1 231x546+700+193
+wm geometry .sigmgr._PF:1 233x559+700+193
+wm geometry .sigmgr._PF:1 233x560+700+193
+pf:read PF:1 v(i) v(a) v(h) v(d) v(c) v(b)
+# WF:1:1 WF:1:2 WF:1:3 WF:1:4 WF:1:5 WF:1:6
+Graph addsignal {WF:1:1 WF:1:2 WF:1:3 WF:1:4 WF:1:5 WF:1:6} -region {new new new new new new} -yview {real(y) real(y) real(y) real(y) real(y) real(y)} -xview {real(x) real(x) real(x) real(x) real(x) real(x)} -tracehi {2 2 2 2 2 2}
+# Signal0 Signal1 Signal2 Signal3 Signal4 Signal5
+Mdi:Resize 589 577
+Mdi:Move 5 5
+ScopeSigMgr:Reload 0 {{(1) padtest_in.tr0}}
+ScopeSigMgr:Reload 0 {{(1) padtest_in.tr0}}
+pf:read PF:3 v(p_h)
+# WF:3:6
+Graph addsignal WF:3:6 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal17
+pf:read PF:3 v(p_i)
+# WF:3:7
+Graph addsignal WF:3:7 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal18
+ScopeSigMgr:Reload 0 {{(1) padtest_in.tr0}}
+ScopeSigMgr:Reload 0 {{(1) padtest_in.tr0}}
+ScopeSigMgr:Reload 0 {{(1) padtest_in.tr0}}
+ScopeSigMgr:Reload 0 {{(1) padtest_in.tr0}}
+pf:read PF:7 v(h)
+# WF:7:8
+Graph addsignal WF:7:8 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal47
+Graph:Select Graph0
+Graph:DSel
+Graph itemselect Signal46 add
+# Signal46
+GrXY:NewGraph
+# Graph1
+pf:read PF:7 v(a) v(b) v(c) v(d) v(h) v(i)
+# WF:7:1 WF:7:2 WF:7:3 WF:7:4 WF:7:8 WF:7:5
+Graph addsignal {WF:7:1 WF:7:2 WF:7:3 WF:7:4 WF:7:8 WF:7:5} -region {new new new new new new} -yview {real(y) real(y) real(y) real(y) real(y) real(y)} -xview {real(x) real(x) real(x) real(x) real(x) real(x)} -tracehi {2 2 2 2 2 2}
+# Signal0 Signal1 Signal2 Signal3 Signal4 Signal5
+Mdi:Resize 471 569
+Mdi:Move 5 5
+Mdi:Move 71 -13
+Mdi:Resize 486 596
+Mdi:Move 71 -13
+GrXY:NewGraph
+# Graph2
+pf:read PF:7 v(p_a) v(p_b) v(p_c) v(p_d) v(p_h) v(p_i)
+# WF:7:6 WF:7:7 WF:7:9 WF:7:10 WF:7:11 WF:7:12
+Graph addsignal {WF:7:6 WF:7:7 WF:7:9 WF:7:10 WF:7:11 WF:7:12} -region {new new new new new new} -yview {real(y) real(y) real(y) real(y) real(y) real(y)} -xview {real(x) real(x) real(x) real(x) real(x) real(x)} -tracehi {2 2 2 2 2 2}
+# Signal0 Signal1 Signal2 Signal3 Signal4 Signal5
+Mdi:Resize 642 578
+Mdi:Move 5 5

@@ -6,13 +6,13 @@ Report : timing
         -max_paths 1
 Design : top
 Version: U-2022.12-SP7
-Date   : Sun Apr 28 23:11:40 2024
+Date   : Tue Apr 30 18:15:05 2024
 ****************************************
 
 Operating Conditions: typical   Library: osu05_stdcells
 Wire Load Model Mode: top
 
-  Startpoint: dp/num2_reg[0]
+  Startpoint: dp/num2_reg[3]
               (falling edge-triggered flip-flop)
   Endpoint: out_Bnum[1]
             (output port clocked by vclk)
@@ -21,18 +21,18 @@ Wire Load Model Mode: top
 
   Point                                    Incr       Path
   -----------------------------------------------------------
-  dp/num2_reg[0]/CLK (DFFNEGX1)            0.00       0.00 f
-  dp/num2_reg[0]/Q (DFFNEGX1)              0.77       0.77 f
-  dp/U246/Y (XNOR2X1)                      0.25       1.03 f
-  dp/U245/Y (NOR2X1)                       0.11       1.14 r
-  dp/U238/Y (AOI22X1)                      0.14       1.28 f
-  dp/U237/Y (OAI21X1)                      0.26       1.53 r
-  dp/U236/Y (XOR2X1)                       0.33       1.87 f
-  dp/U235/Y (XOR2X1)                       0.33       2.20 f
-  dp/U213/Y (NAND2X1)                      0.23       2.43 r
-  dp/U211/Y (XNOR2X1)                      0.15       2.58 f
-  out_Bnum[1] (out)                        0.00       2.58 f
-  data arrival time                                   2.58
+  dp/num2_reg[3]/CLK (DFFNEGX1)            0.00       0.00 f
+  dp/num2_reg[3]/Q (DFFNEGX1)              0.82       0.82 f
+  dp/U249/Y (XNOR2X1)                      0.25       1.08 f
+  dp/U247/Y (NOR2X1)                       0.11       1.19 r
+  dp/U240/Y (AOI22X1)                      0.14       1.33 f
+  dp/U239/Y (OAI21X1)                      0.26       1.59 r
+  dp/U238/Y (XOR2X1)                       0.33       1.92 f
+  dp/U237/Y (XOR2X1)                       0.33       2.25 f
+  dp/U215/Y (NAND2X1)                      0.23       2.48 r
+  dp/U213/Y (XNOR2X1)                      0.15       2.63 f
+  out_Bnum[1] (out)                        0.00       2.63 f
+  data arrival time                                   2.63
   -----------------------------------------------------------
   (Path is unconstrained)
 

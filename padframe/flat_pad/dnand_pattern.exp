@@ -1,0 +1,61 @@
+*
+* Elec422/527 SPICE EXPERIMENT TEMPLATE;
+*
+* Dynamic domino 4 input NAND / AND
+* ------------------------------------
+
+* Include MOSFET Model File for AMI C5N process
+.include "mosis_spice_model_AMI05.txt"
+
+* Include Transistor Netlist from : ext2spice from within Magic
+.include "mod.spice"
+
+* Set BASIC VOLTAGE levels
+vdd  vdd  gnd  dc 5
+* set substrate voltages : P-sub = vdd;  N-sub = Gnd
+vs1 vdd  vdd  dc 0
+vs2 Gnd  gnd  dc 0
+
+* ------------------------------------
+
+* Set other constant circuit inputs, for example b. Commented out here.
+* vb  b gnd  dc 0
+
+* ------------------------------------
+* Set Circuit Input which will change, here a,b,c,d and also the precharge
+* Instead of single pulses, use the spice digital pattern input 
+* Vxxx n+ n- PAT ( vhi vlo td tr tf tsample data )
+* In this pattern, Vxxx is the name of the voltage, between nodes n+ and n- (gnd)
+* The vhi is High voltage is 5 v, the vlo is Low voltage is 0 v
+* The td is the Time delay before the pattern starts
+* The tr is the Rise time is 1 n, the tf is the Fall time is 1 n
+* The tsample is the sample time where the signal is high
+* The data is the bit or b-string of 1 and 0 with no spaces in between.
+* Example vpre pre gnd  pat (5 0 5ns 0.1ns 0.1ns 4.8ns b01010101)
+* Here the precharage voltage is delayed 5ns and between 0 and 5V with a pulse
+* width of 0.1 + 4.8 + 0.1 or 5ns.  The b-string of b010101010 is 9 bits or 45ns.
+* ------------------------------------
+
+* precharge signal 0 to pfet during precharge, 1 during evaluate
+* vpre pre gnd  pat (5 0 5ns 0.1ns 0.1ns 4.8ns b0101010101)
+* data values, follow strict 0 during precharge
+va   a   gnd  pat (5 0 5ns 0.3ns 0.3ns 5ns b00000000111111110)
+vb   b   gnd  pat (5 0 5ns 0.3ns 0.3ns 5ns b00001111000011110)
+vc   c   gnd  pat (5 0 5ns 0.3ns 0.3ns 5ns b00110011001100110)
+vd   d   gnd  pat (5 0 5ns 0.3ns 0.3ns 5ns b01010101010101010)
+
+
+* ------------------------------------
+
+* Do analysis: give increments and total time for analysis here.
+* .tran step_size total_simulation_time
+* Here 0.1ns is appropriate for solution calculation
+* Total time is based on initial 5ns delay plus nine bit pattern of 5ns per bit
+.tran 0.1ns 500ns
+
+
+* Next option line needed to generate data for cscope viewer
+.OPTION LIST NODE POST
+
+.end
+t

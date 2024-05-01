@@ -12,7 +12,7 @@
 #/* Edit this part only of the file.                                     */
 #/* Add all verilog files, separated by spaces after keyword "list"      */
 
-set my_verilog_files [list dp.v main_FSM.v top.v]
+set my_verilog_files [list dp1.v main_FSM.v top.v]
 
 #/* Top-level Module Name update                            */
 set my_toplevel top
@@ -25,7 +25,7 @@ set my_clock_pin clka
 set compile_automatic_clock_phase_inference none
 
 #/* Target frequency in MHz for optimization       */
-set my_clk_freq_MHz 20
+set my_clk_freq_MHz 66.66666667
 
 #/* Delay of input signals (Clock-to-Q, Package etc.)  */
 set my_input_delay_ns 1

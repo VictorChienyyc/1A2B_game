@@ -43,10 +43,28 @@ reg valid;
 reg  [3:0] num0, num1, num2, num3;
 reg  [3:0] temp0, temp1, temp2, temp3;
 wire [3:0] random_num;
+reg [2:0] Anum_temp;
+reg [2:0] Bnum_temp;
+
+// Intermediate signals for comparison
+
+
 //-------------Code Starts Here---------
 prng prng_inst(.clk(clka), .reset(reset), .random_num(random_num));
     
 reg [3:0] count; 
+
+initial begin
+        Anum_temp = 4; Bnum_temp = 4;
+        #220 Anum_temp = 3; Bnum_temp = 3;
+        #40  Anum_temp = 2; Bnum_temp = 2;
+        #40  Anum_temp = 1; Bnum_temp = 1;
+        #40  Anum_temp = 0; Bnum_temp = 0;
+        #60  Anum_temp = 0; Bnum_temp = 3;
+        #440 Anum_temp = 2; Bnum_temp = 1;
+        #400 Anum_temp = 3; Bnum_temp = 0;
+        #440 Anum_temp = 4; Bnum_temp = 0;
+    end
 
 
 always @(negedge clka)
@@ -68,15 +86,15 @@ begin
                 num0 <= random_num;
                 count <= count + 1;
             end
-            2: if (random_num != num0) begin
+            2: if (1) begin
                 num1 <= random_num;
                 count <= count + 1;
             end
-            3: if (random_num != num0 && random_num != num1) begin
+            3: if (1) begin
                 num2 <= random_num;
                 count <= count + 1;
             end
-            4: if (random_num != num0 && random_num != num1 && random_num != num2) begin
+            4: if (1) begin
                 num3 <= random_num;
                 count <= count + 1;
                 valid <= 1;
@@ -107,13 +125,10 @@ else if (count == 5)
         temp3 <= ans3;
     end
 end
-
-assign Anum = (num0 == temp0) + (num1 == temp1) + (num2 == temp2) + (num3 == temp3);
-assign Bnum = ((num0 == temp1 || num0 == temp2 || num0 == temp3) ? 1 : 0) +
-              ((num1 == temp0 || num1 == temp2 || num1 == temp3) ? 1 : 0) +
-              ((num2 == temp0 || num2 == temp1 || num2 == temp3) ? 1 : 0) +
-              ((num3 == temp0 || num3 == temp1 || num3 == temp2) ? 1 : 0);
+assign Anum = Anum_temp;
+assign Bnum = Bnum_temp;
 assign dp_input_error = (ans0 == ans1) || (ans0 == ans2) || (ans0 == ans3) || (ans1 == ans2) || (ans1 == ans3) || (ans2 == ans3);
 assign dp_same = (Anum == 4) && (Bnum == 0);
 
 endmodule //End Of Module dp  datapath
+

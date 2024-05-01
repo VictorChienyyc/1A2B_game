@@ -7,7 +7,7 @@ module top (
     input wire in_clka, in_clkb, in_loadtest, in_enter, in_restart;
     input wire [3:0]  in_ans0, in_ans1, in_ans2, in_ans3;
     output wire [2:0] out_Anum, out_Bnum;
-    output wire [2:0] out_state;  
+    output wire [1:0] out_state;  
     output wire out_valid;
 
 	wire out_save_test, out_reset;
@@ -46,3 +46,4 @@ module top (
     );
 
 endmodule
+
