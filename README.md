@@ -81,7 +81,7 @@ The datapath instances a pseudo-random-number-generator (PRNG) using linear-feed
     calma rescale no -> open final.gds file -> select layout -> expand -> extract all -> ext2sim -t!
 
     ![Magic layout](figure/Magic_from_gds.jpg)
-    *Figure 7: Magic layout from gds file*
+    *Figure 7: Magic layout from gds file(1 lambda = 0.3 micron)*
 
     According to the requirements and pin assignments, we have 30 pins in total, including 21 inputs and 9 outputs, connecting the core chip to GPIO functionalities. You can refer to the pin map in the sixth section for details. The following image shows the most basic connection of the Magic post-connection to pads that we've just completed
 
